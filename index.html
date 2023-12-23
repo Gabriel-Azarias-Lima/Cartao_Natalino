@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Feliz Natal | 2023" />
+  <meta property="og:description" content="Venho por meio deste projeto desejar um Feliz Natal." />
+  <meta property="og:image" content="https://natal2023-gal-dev.netlify.app/imagem/projeto_img.png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://natal2023-gal-dev.netlify.app" />
+  <meta property="og:site_name" content="Feliz Natal | 2023" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:site" content="@codar_me" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="imagem/Natal.ico" type="image/x-icon">
+  <title>Feliz Natal | 2023</title>
+  <script src="javascript/efeito-card.js" defer></script>
+</head>
+
+<body>
+
+  <audio id="meuAudio" src="audio/natal.mp3" preload="auto"></audio>
+
+  <script>
+      var meuAudio = document.getElementById('meuAudio');
+      
+      // Adiciona eventos para 'click' e 'touchstart'
+      document.body.addEventListener('click', playAudio);
+      document.body.addEventListener('touchstart', playAudio);
+  
+      function playAudio() {
+          meuAudio.play()
+          .then(function() {
+              // A reprodução foi iniciada com sucesso
+              console.log('Reprodução iniciada com sucesso');
+          })
+          .catch(function(error) {
+              // A reprodução foi bloqueada ou ocorreu um erro
+              console.error('Erro ao reproduzir áudio:', error);
+          });
+  
+          // Remove os eventos após o primeiro clique ou toque (opcional)
+          document.body.removeEventListener('click', playAudio);
+          document.body.removeEventListener('touchstart', playAudio);
+      }
+  </script>
+  
+
+  <div class="container-snow">
+
+    <div class="snow">
+      <span style="--i:11;"></span>
+      <span style="--i:12;"></span>
+      <span style="--i:24;"></span>
+      <span style="--i:10;"></span>
+      <span style="--i:14;"></span>
+      <span style="--i:23;"></span>
+      <span style="--i:18;"></span>
+      <span style="--i:16;"></span>
+      <span style="--i:19;"></span>
+      <span style="--i:20;"></span>
+      <span style="--i:22;"></span>
+      <span style="--i:25;"></span>
+      <span style="--i:18;"></span>
+      <span style="--i:21;"></span>
+      <span style="--i:13;"></span>
+      <span style="--i:15;"></span>
+      <span style="--i:26;"></span>
+      <span style="--i:17;"></span>
+      <span style="--i:13;"></span>
+
+      <span style="--i:11;"></span>
+      <span style="--i:12;"></span>
+      <span style="--i:24;"></span>
+      <span style="--i:10;"></span>
+      <span style="--i:14;"></span>
+      <span style="--i:23;"></span>
+      <span style="--i:18;"></span>
+      <span style="--i:16;"></span>
+      <span style="--i:19;"></span>
+      <span style="--i:20;"></span>
+      <span style="--i:22;"></span>
+      <span style="--i:25;"></span>
+      <span style="--i:18;"></span>
+      <span style="--i:21;"></span>
+      <span style="--i:13;"></span>
+      <span style="--i:15;"></span>
+      <span style="--i:26;"></span>
+      <span style="--i:17;"></span>
+      <span style="--i:13;"></span>
+    </div>
+
+    <div class="card-3d">
+      <div class="container">
+        <div class="card">
+          <div class="card-bg">
+            <img src="imagem/card.jpg" alt="">
+          </div><!-- card-bg -->
+
+          <div class="title">
+            <div class="title">
+              <h2>Feliz</h2>
+              <h1>Natal</h1>
+
+            </div><!-- title -->
+            <div class="images">
+              <img src="imagem/Papai_Noel.png" class="santa" alt="">
+              <img src="imagem/arvore natal com presente.png" class="tree" alt="">
+            </div><!-- images -->
+          </div><!-- title -->
+
+
+        </div><!-- card -->
+      </div><!-- container -->
+    </div>
+  </div>
+
+
+ 
+
+
+</body>
+
+</html>

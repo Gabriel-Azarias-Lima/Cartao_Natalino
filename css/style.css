@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap');
+
+/* ESTILO GERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* ESTILO IMAGEM DE FUNDO */
+
+.container-snow {
+  height: 100vh;
+  background-image: url(../imagem/21532554_6492483.jpg);
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed; /* Adicionado position: fixed */
+  width: 100%;
+}
+
+.card-3d{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ESTILOS CARD */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 660px;
+  perspective: 1200px; /* Valor original */
+}
+
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Alterado para 100% para garantir consistência */
+  max-width: 400px; /* Adicionado um limite máximo para o tamanho do card */
+  height: 600px;
+  transform-style: preserve-3d;
+}
+  
+  .card .card-bg{
+    position: absolute;
+  }
+  
+  .card .card-bg img{
+    z-index: 1;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .card .title{
+    z-index: 2;
+    padding-top: 30px;
+    top: 50px;
+    text-align: left;
+    line-height: 40px;
+    transition: all 0.3s ease-out;
+  }
+  
+  .card .title h2{
+    font-family: "Eczar", serif;
+    font-weight: 400;
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+  
+  .card .title h1{
+    font-family: "Berkshire Swash", cursive;
+    font-weight: 500;
+    font-size: 60px;
+    letter-spacing: 2px;
+    padding-bottom: 30px;
+  }
+  
+  
+  .card .images{
+    z-index: 2;
+  }
+  
+  .card .images .santa{
+    z-index: 3;
+    position: absolute;
+    width: 250px;
+    transition: all 0.3s ease-out;
+  }
+  
+  .card .images .tree{
+    margin-top: 50px;
+    z-index: 2;
+    width: 300px;
+    transition: all 0.3s ease-out;
+  }
+
+
+  /* EFEITO SNOW */
+
+  .snow{
+    position: relative;
+    display: flex ;
+  }
+
+  .snow span{
+    position: relative;
+    min-width: 5px;
+    height: 5px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 1vw;
+    box-shadow: -100px 20px 5px #fff, 
+    100px 20px 10px #fff;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(95s / var(--i));
+  }
+
+  .snow span:nth-child(even){
+    min-width: 10px;
+    height: 10px;
+  }
+
+  @keyframes animate{
+    0%{
+      transform: translateY(-10vh);
+    }
+
+    100%{
+      transform: translateY(100vh);
+    }
+  }
+
+
+  /* Responsividade */
+
+  @media screen and (max-width: 435px){
+
+    .card {
+      max-width: 350px; /* Adicionado um limite máximo para o tamanho do card */
+    }
+
+    .card-3d{
+      padding: 0 8%;
+    }
+
+    .card .images .santa{
+      width: 200px;
+    }
+    
+    .card .images .tree{
+      width: 250px;
+    }
+}
+
+
+@media screen and (max-width: 320px){
+  .container {
+    width: 700px;
+    height: 450px;
+  }
+
+  .card .title h2{
+    font-size: 25px;
+  }
+  
+  .card .title h1{
+    font-size: 60px;
+  }
+
+  .card .images .santa{
+    width: 150px;
+  }
+  
+  .card .images .tree{
+    width: 200px;
+  }
+}
