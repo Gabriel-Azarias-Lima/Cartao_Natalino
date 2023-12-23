@@ -25,29 +25,7 @@
 
   <audio id="meuAudio" src="audio/natal.mp3" preload="auto"></audio>
 
-  <script>
-      var meuAudio = document.getElementById('meuAudio');
-      
-      // Adiciona eventos para 'click' e 'touchstart'
-      document.body.addEventListener('click', playAudio);
-      document.body.addEventListener('touchstart', playAudio);
-  
-      function playAudio() {
-          meuAudio.play()
-          .then(function() {
-              // A reprodução foi iniciada com sucesso
-              console.log('Reprodução iniciada com sucesso');
-          })
-          .catch(function(error) {
-              // A reprodução foi bloqueada ou ocorreu um erro
-              console.error('Erro ao reproduzir áudio:', error);
-          });
-  
-          // Remove os eventos após o primeiro clique ou toque (opcional)
-          document.body.removeEventListener('click', playAudio);
-          document.body.removeEventListener('touchstart', playAudio);
-      }
-  </script>
+
   
 
   <div class="container-snow">

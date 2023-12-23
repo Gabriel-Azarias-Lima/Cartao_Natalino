@@ -5,6 +5,7 @@ const santa = document.querySelector(".santa");
 const tree = document.querySelector(".tree");
 
 let isMobile = false;
+let audio = document.getElementById("meuAudio");
 
 // Verifica se o dispositivo é um dispositivo móvel
 if ('ontouchstart' in window || navigator.maxTouchPoints) {
@@ -34,6 +35,9 @@ const handleCardEffects = () => {
   title.style.transform = "translate3d(0, 0, 220px)";
   tree.style.transform = "translate3d(0, 0, 160px)";
   card.style.transition = "all 0.1s ease";
+
+  // Reproduzir o áudio
+  audio.play();
 };
 
 // Função para retornar o cartão ao estado original
@@ -49,4 +53,3 @@ const handleCardBack = () => {
 container.addEventListener(isMobile ? "touchmove" : "mousemove", handleRotate);
 container.addEventListener(isMobile ? "touchstart" : "mouseover", handleCardEffects);
 container.addEventListener(isMobile ? "touchend" : "mouseout", handleCardBack);
-
